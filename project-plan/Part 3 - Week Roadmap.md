@@ -6,7 +6,7 @@
 
 ##### Project Repository
 
-- [ ] Create GitHub organization "Lamulo360-Legal"
+- [ ] Create GitHub organization "Verdict360-Legal"
 - [ ] Initialize repositories (web, api, mobile)
 - [ ] Set up branch protection rules with legal compliance emphasis
 - [ ] Configure GitHub project board with legal workflow labels
@@ -639,7 +639,7 @@ def init_pinecone():
 def get_sa_legal_prompt():
     """Get South African legal prompt template"""
     return """
-    You are Lamulo360, a specialized South African legal assistant. You provide accurate
+    You are Verdict360, a specialized South African legal assistant. You provide accurate
     information based on South African law, case precedents, and legal principles.
 
     Use the following pieces of context to answer the user's question about South African law.

@@ -1,8 +1,8 @@
-# Verdict360 Project Plan
+# Verdict360 Revised Project Plan
 
-## 1. Project Summary
+## 1. Project Summary (Open-Source Implementation)
 
-Verdict360 is an AI-powered legal intelligence platform designed specifically for legal firms and HR departments to access, interpret, and utilize South African legal information through natural language interaction.
+Verdict360 is an AI-powered legal intelligence platform designed specifically for legal firms and HR departments to access, interpret, and utilize South African legal information through natural language interaction, implemented with a lean, cost-effective approach using open-source technologies.
 
 ### Core Value Proposition
 
@@ -12,7 +12,7 @@ Verdict360 makes complex legal knowledge effortless to access - users can intuit
 
 - **Instant Legal Information Access**: Transform document search into natural conversation
 - **South African Legal Context**: Responses that understand South African legal framework, terminology, and precedents
-- **Legal Source Integration**: Direct access to established South African legal databases and credible sources
+- **Legal Source Integration**: Curated collection of freely available South African legal information
 - **Audio Recording & Processing**: Capture hearings and meetings via mobile and generate formatted legal documents
 - **Seamless Export**: Convert AI-generated content into rich-text format compatible with word processors
 
@@ -21,7 +21,7 @@ Verdict360 makes complex legal knowledge effortless to access - users can intuit
 - **Primary**: Legal professionals (attorneys, advocates, paralegals)
 - **Secondary**: HR professionals (managers, specialists, consultants)
 
-### Technical Architecture (Simplified MVP)
+### Revised Technical Architecture (Open-Source MVP)
 
 ```
 ┌────────────────┐     ┌───────────────────┐
@@ -32,50 +32,50 @@ Verdict360 makes complex legal knowledge effortless to access - users can intuit
           │                      │
           ↓                      ↓
 ┌────────────────┐     ┌───────────────────┐
-│  Supabase      │     │  Document/Audio   │
-│  (Auth/DB)     │     │  Storage (S3)     │
+│  PostgreSQL +  │     │  MinIO Storage    │
+│  Keycloak      │     │  (Self-hosted)    │
 └────────────────┘     └───────────────────┘
                               ↑
                               │
                               ↓
                        ┌───────────────────┐
                        │  LangChain +      │
-                       │  OpenAI + Whisper │
+                       │  Ollama + Whisper │
                        └───────────────────┘
           ↑                      ↑
           │                      │
           ↓                      ↓
 ┌────────────────┐     ┌───────────────────┐
-│  Mobile App    │     │  Legal Database   │
-│  (React Native)│     │  Integration      │
+│  Mobile App    │     │  Curated Legal    │
+│  (React Native)│     │  Database         │
 └────────────────┘     └───────────────────┘
 ```
 
-### Core Feature Set
+### Core Feature Set (Leaner Implementation)
 
 1. **Document Intelligence System**
 
    - Legal document upload and processing (PDF, DOCX, TXT)
-   - South African case law integration
-   - Text extraction with legal citation recognition
-   - Vector embedding and semantic search
+   - Curated South African legal reference collection
+   - Text extraction with basic citation recognition
+   - Local vector database for semantic search (ChromaDB)
 
 2. **Audio Processing System**
 
    - Mobile recording of legal proceedings/meetings
-   - Speech-to-text transcription
-   - Legal document generation (heads of arguments, summaries)
+   - Self-hosted Whisper for speech-to-text transcription
+   - Legal document generation with predefined templates
    - Rich-text export for word processors
 
 3. **Natural Language Legal Interface**
 
-   - Context-aware legal query processing
-   - South African legal framework knowledge
-   - Source citation with verification
-   - Case law reference and retrieval
+   - Context-aware legal query processing with open-source LLMs
+   - South African legal framework knowledge via custom prompts
+   - Source citation with basic verification
+   - Basic case law reference and retrieval
 
 4. **User & Content Management**
-   - Role-based access for legal and HR teams
-   - Document version control and sharing
+   - Role-based access with Keycloak authentication
+   - Simple document version control
    - Generated document management and export
-   - Usage analytics for enterprise clients
+   - Basic usage tracking

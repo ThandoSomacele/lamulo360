@@ -155,8 +155,8 @@
 - [ ] Clone the repository and set up develop branch
 
   ```bash
-  git clone https://github.com/Lamulo360-Legal/Lamulo360.git
-  cd Lamulo360
+  git clone https://github.com/Verdict360-Legal/Verdict360.git
+  cd Verdict360
   git checkout -b develop
   ```
 
@@ -388,7 +388,7 @@
 ### Project Structure
 
 ```
-Lamulo360/
+Verdict360/
 ├── frontend/                         # Next.js frontend
 │   ├── app/                          # Next.js app directory
 │   │   ├── page.tsx                  # Landing page
